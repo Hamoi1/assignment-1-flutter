@@ -1,152 +1,258 @@
-# Task Manager App
+# 📋 Task Manager App
 
-A modern, feature-rich Task Manager application built with Flutter, GetX state management, and Google Drive backup integration.
+<div align="center">
 
-## Features
+![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
+![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)
+![GetX](https://img.shields.io/badge/GetX-8A2BE2?style=for-the-badge)
 
-### Core Functionality
-- ✅ **Task Management**: Create, read, update, and delete tasks
-- 📝 **Task Properties**: Title, description, category, date, and completion status
-- 🔍 **Search & Filter**: Search tasks by title/description and filter by category
-- 📊 **Statistics**: View total, completed, and pending task counts
-- 💾 **Local Storage**: Persistent storage using GetStorage
+**A modern, feature-rich Task Manager application built with Flutter and GetX**
 
-### Google Drive Backup
-- ☁️ **Cloud Backup**: Upload tasks to Google Drive
-- 🔄 **Auto Backup**: Automatically backup when creating new tasks
-- 👤 **Google Sign-In**: Secure authentication with Google account
-- 📁 **Backup File**: Tasks stored as `tasks_backup.json` in app data folder
+</div>
 
-### UI/UX
-- 🎨 **Beautiful Design**: Modern, clean interface with smooth animations
-- 🌓 **Dark/Light Mode**: Toggle between dark and light themes
-- 🎯 **Category Colors**: Color-coded categories for easy identification
-- 📱 **Responsive**: Works on all screen sizes
+## ✨ Features
 
-## Categories
-- Work (Blue)
-- Personal (Green)
-- Shopping (Orange)
-- Health (Red)
-- Other (Purple)
+### 📝 Task Management
+- ✅ **Full CRUD Operations** - Create, Read, Update, Delete tasks
+- 📌 **Task Pinning** - Pin important tasks to appear at the top
+- 🏷️ **Categories** - Organize tasks by 5 categories (Work, Personal, Shopping, Health, Other)
+- 📅 **Due Dates** - Set and track task deadlines
+- ✔️ **Completion Status** - Mark tasks as complete/incomplete
 
-## Screens
+### 🔍 Search & Filter
+- Search tasks by title and description
+- Filter by category
+- Automatic sorting (pinned tasks first, then by date)
 
-1. **Splash Screen**: Animated welcome screen
-2. **Home Screen**: Task list with search and filters
-3. **Add Task Screen**: Create new tasks
-4. **Task Details Screen**: View and edit task details
-5. **Settings Screen**: Google Drive backup and theme settings
+### 📊 Task Statistics
+- Total task count
+- Completed tasks count
+- Pending tasks count
+- Analytics dashboard with charts
 
-## Dependencies
+### 🎨 Design
+- 🌓 **Dark/Light Mode** - Toggle themes with one click
+- ✨ **Glassmorphism** - Modern glass-like UI design
+- 🎯 **Category Colors** - Each category has its unique color
+- 💫 **Smooth Animations** - Beautiful transitions throughout
 
-```yaml
-dependencies:
-  get: ^4.6.6                    # State management & routing
-  get_storage: ^2.1.1            # Local storage
-  google_sign_in: ^6.2.1         # Google authentication
-  googleapis: ^13.2.0            # Google APIs
-  http: ^1.2.1                   # HTTP requests
-  google_fonts: ^6.2.1           # Custom fonts
-  intl: ^0.19.0                  # Date formatting
-  flutter_animate: ^4.5.0        # Animations
-```
+### 💾 Backup & Restore
+- Export data to file (.tmbk format)
+- Import/restore from file
+- Automatic local storage with GetStorage
 
-## Getting Started
+---
 
-### Prerequisites
-- Flutter SDK (latest stable version)
-- Android Studio / VS Code
-- Google Cloud Project with Drive API enabled (for backup feature)
+## 🛠️ Technologies
 
-### Installation
+| Technology | Usage |
+|---|---|
+| **Flutter** | UI Framework |
+| **GetX** | State Management & Routing |
+| **GetStorage** | Local Data Persistence |
+| **Google Fonts** | Noto Sans Arabic Typography |
+| **FL Chart** | Analytics Charts |
+| **Curved Navigation Bar** | Bottom Navigation |
 
-1. Clone the repository:
-```bash
-git clone <repository-url>
-cd assignment
-```
+---
 
-2. Install dependencies:
-```bash
-flutter pub get
-```
-
-3. Run the app:
-```bash
-flutter run
-```
-
-## Project Structure
+## 📁 Project Structure
 
 ```
 lib/
 ├── main.dart                      # App entry point
 ├── routes.dart                    # Route configuration
+│
 ├── controllers/
 │   ├── task_controller.dart       # Task management logic
-│   └── backup_controller.dart     # Google Drive backup logic
+│   ├── backup_controller.dart     # Backup/restore logic
+│   └── analytics_controller.dart  # Statistics logic
+│
 ├── models/
-│   └── task_model.dart           # Task data model
+│   └── task_model.dart            # Task data model
+│
 ├── theme/
-│   ├── app_theme.dart            # Theme definitions
-│   └── theme_service.dart        # Theme state management
+│   ├── app_theme.dart             # Light & dark theme definitions
+│   └── theme_service.dart         # Theme state management
+│
+├── utils/
+│   └── glassy_snackbar.dart       # Glassmorphism snackbars
+│
 └── views/
-    ├── splash_screen.dart        # Splash screen
-    ├── home_screen.dart          # Main task list
-    ├── add_task_screen.dart      # Create task form
-    ├── task_details_screen.dart  # Task details & editing
-    └── settings_screen.dart      # Settings & backup
+    ├── splash_screen.dart         # Splash screen
+    ├── home_screen.dart           # Main screen with tabs
+    ├── add_task_screen.dart       # Add task form
+    ├── task_details_screen.dart   # Task details & editing
+    ├── settings_screen.dart       # Settings & backup
+    └── analytics_screen.dart      # Statistics dashboard
 ```
 
-## Usage
+---
 
-### Creating a Task
-1. Tap the **"Add Task"** floating action button
-2. Fill in task details (title, description, category, date)
-3. Tap **"Save Task"**
+## 🚀 Installation & Setup
 
-### Searching Tasks
-- Use the search bar at the top of the home screen
-- Filter by category using the chips below the search bar
+### Prerequisites
 
-### Google Drive Backup
-1. Go to **Settings**
-2. Tap **"Sign In"** under Google Drive Backup
-3. Sign in with your Google account
-4. Tap **"Backup Now"** to manually backup
-5. Enable **"Auto Backup"** to backup automatically when creating tasks
+- **Flutter SDK** version 3.16 or higher
+- **Dart SDK** version 3.2 or higher
+- **Android Studio** or **VS Code**
+- **Git**
 
-### Toggling Theme
-- Tap the sun/moon icon in the app bar
-- Or use the Dark Mode switch in Settings
+### Installation Steps
 
-## Features in Detail
+#### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/username/task-manager-app.git
+cd task-manager-app
+```
 
-### Task Controller
-- `addTask()`: Add new task
-- `updateTask()`: Update existing task
-- `deleteTask()`: Delete task
-- `toggleTaskCompletion()`: Mark task as complete/incomplete
-- `searchTasks()`: Search tasks by keyword
-- `filterByCategory()`: Filter by category
-- `loadTasks()`: Load from storage
-- `saveTasks()`: Save to storage
-- `autoBackup()`: Trigger auto backup if enabled
+#### 2️⃣ Install Dependencies
+```bash
+flutter pub get
+```
 
-### Backup Controller
-- `signInWithGoogle()`: Authenticate with Google
-- `signOutGoogle()`: Sign out
-- `uploadBackupToDrive()`: Upload tasks to Drive
-- `toggleAutoBackup()`: Enable/disable auto backup
-- `loadSettings()`: Load backup settings
-- `saveSettings()`: Save backup settings
+#### 3️⃣ Verify Setup
+```bash
+flutter doctor
+```
 
-## License
+#### 4️⃣ Run the App
+
+**For Android:**
+```bash
+flutter run -d android
+```
+
+**For Windows:**
+```bash
+flutter run -d windows
+```
+
+**For Web:**
+```bash
+flutter run -d chrome
+```
+
+**For iOS (on macOS):**
+```bash
+flutter run -d ios
+```
+
+#### 5️⃣ Build Release APK
+```bash
+flutter build apk --release
+```
+APK file location: `build/app/outputs/flutter-apk/app-release.apk`
+
+---
+
+## 📦 Dependencies
+
+```yaml
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State Management & Routing
+  get: ^4.6.6
+
+  # Local Storage
+  get_storage: ^2.1.1
+
+  # Google Fonts
+  google_fonts: ^6.2.1
+
+  # Date Formatting
+  intl: ^0.19.0
+
+  # Animations
+  flutter_animate: ^4.5.0
+
+  # Bottom Navigation
+  curved_navigation_bar: ^1.0.6
+
+  # Backup & Restore
+  file_saver: ^0.2.14
+  file_picker: ^8.1.4
+
+  # Charts (for Analytics)
+  fl_chart: ^0.69.2
+```
+
+---
+
+## 🎯 Usage Guide
+
+### Adding a Task
+1. Tap the **"+"** tab at the bottom
+2. Enter a title (required)
+3. Enter a description (optional)
+4. Select a category
+5. Pick a date
+6. Tap **"Add Task"**
+
+### Pinning a Task
+1. Tap the 📌 icon on any task card
+2. Pinned tasks appear at the top of the list
+3. Tap again to unpin
+
+### Changing Theme
+- Tap the ☀️/🌙 icon in the app bar
+
+### Backup & Restore
+1. Go to **Settings** (left tab)
+2. Tap **"Export Data"** to backup
+3. A `.tmbk` file will be saved
+4. Tap **"Restore from File"** to restore
+
+---
+
+## 🔧 Configuration
+
+### Change Package Name
+Edit `android/app/build.gradle`:
+```gradle
+defaultConfig {
+    applicationId "com.yourname.taskmanager"
+    ...
+}
+```
+
+### Change App Icon
+Update icons in:
+- `android/app/src/main/res/` for Android
+- `ios/Runner/Assets.xcassets/` for iOS
+
+---
+
+## 📱 Supported Platforms
+
+| Platform | Status |
+|---|---|
+| ✅ Android | Supported |
+| ✅ iOS | Supported |
+| ✅ Windows | Supported |
+| ✅ macOS | Supported |
+| ✅ Linux | Supported |
+| ✅ Web | Supported |
+
+---
+
+## 📄 License
 
 This project is created for educational purposes.
 
-## Author
+---
 
-Task Manager App - Flutter Development Assignment
+## 👨‍💻 Author
 
+**Task Manager App**  
+Flutter Development Project
+
+---
+
+<div align="center">
+
+**Made with ❤️ and Flutter**
+
+</div>
