@@ -13,7 +13,7 @@
 ## ✨ Features
 
 ### 📝 Task Management
-- ✅ **Full CRUD Operations** - Create, Read, Update, Delete tasks
+- ✅ **Full CRUD Operations** - Create, Read, Delete tasks
 - 📌 **Task Pinning** - Pin important tasks to appear at the top
 - 🏷️ **Categories** - Organize tasks by 5 categories (Work, Personal, Shopping, Health, Other)
 - 📅 **Due Dates** - Set and track task deadlines
@@ -28,7 +28,6 @@
 - Total task count
 - Completed tasks count
 - Pending tasks count
-- Analytics dashboard with charts
 
 ### 🎨 Design
 - 🌓 **Dark/Light Mode** - Toggle themes with one click
@@ -51,8 +50,6 @@
 | **GetX** | State Management & Routing |
 | **GetStorage** | Local Data Persistence |
 | **Google Fonts** | Noto Sans Arabic Typography |
-| **FL Chart** | Analytics Charts |
-| **Curved Navigation Bar** | Bottom Navigation |
 
 ---
 
@@ -66,7 +63,7 @@ lib/
 ├── controllers/
 │   ├── task_controller.dart       # Task management logic
 │   ├── backup_controller.dart     # Backup/restore logic
-│   └── analytics_controller.dart  # Statistics logic
+│
 │
 ├── models/
 │   └── task_model.dart            # Task data model
@@ -84,7 +81,7 @@ lib/
     ├── add_task_screen.dart       # Add task form
     ├── task_details_screen.dart   # Task details & editing
     ├── settings_screen.dart       # Settings & backup
-    └── analytics_screen.dart      # Statistics dashboard
+    
 ```
 
 ---
@@ -175,8 +172,6 @@ dependencies:
   file_saver: ^0.2.14
   file_picker: ^8.1.4
 
-  # Charts (for Analytics)
-  fl_chart: ^0.69.2
 ```
 
 ---
